@@ -113,7 +113,7 @@ Using Bitcoin funding, open interest, and ETF flow data, the monitor identified 
 | Aggressive Short Buildup | +3.24% | -12.10% |
 | Short Covering Rally | -1.74% | -3.62% |
 
-These results suggest institutional spot demand may be more supportive than leverage-driven positioning.
+These preliminary results suggest that different institutional flow and leverage regimes exhibit meaningfully different forward-return profiles. Additional data and larger sample sizes are needed to evaluate the robustness of these relationships.
 
 ## Notebook
 
