@@ -104,6 +104,17 @@ Using Bitcoin funding, open interest, and ETF flow data, the monitor identified 
 | Short Covering Rally | -1.74% | -3.62% |
 
 These results suggest institutional spot demand may be more supportive than leverage-driven positioning.
+
+## Notebook
+
+The primary analysis is contained in:
+
+`notebooks/btc_positioning_monitor.ipynb`
+
+If GitHub notebook rendering is unavailable, a static HTML export is also included:
+
+[View HTML Export](notebooks/btc_positioning_monitor.html)
+
 ## Disclaimer
 
 This project is intended for educational and research purposes only and should not be interpreted as investment advice.
