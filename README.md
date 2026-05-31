@@ -2,17 +2,25 @@
 
 ## Overview
 
-This project analyzes Bitcoin market structure through a combination of spot price action, derivatives positioning, and institutional capital flows.
+This project analyzes Bitcoin market structure through a combination of institutional capital flows and derivatives positioning data.
 
 The objective is to identify periods of:
 
+- Strong ETF Inflows
 - Aggressive Long Buildup
 - Aggressive Short Buildup
-- Short Covering Rallies
 - Long Liquidations
-- Strong Institutional ETF Inflows
+- Short Covering Rallies
 
 and evaluate how Bitcoin has historically performed following each regime.
+
+The framework combines:
+
+- Spot Bitcoin ETF flows (institutional demand)
+- Funding rates (leverage sentiment)
+- Open interest (positioning expansion and contraction)
+
+Signals are evaluated using forward 7-day and 30-day Bitcoin returns to determine whether specific positioning environments have historically been associated with future market performance.
 
 ---
 
@@ -22,8 +30,10 @@ and evaluate how Bitcoin has historically performed following each regime.
 - BTC Spot Price
 - Trading Volume
 
-### CoinGlass
+### Hyperliquid
 - Funding Rates
+
+### CoinGlass
 - Open Interest
 - Spot Bitcoin ETF Flows
 
