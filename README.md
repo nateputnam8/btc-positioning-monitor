@@ -105,15 +105,39 @@ to determine whether positioning conditions have historically been associated wi
 
 Using Bitcoin funding, open interest, and ETF flow data, the monitor identified several positioning regimes and evaluated their subsequent forward returns.
 
-| Signal | Median 7D Return | Median 30D Return |
-|----------|----------|----------|
-| Strong ETF Inflows | +2.00% | -2.35% |
-| Aggressive Long Buildup | -1.24% | -4.47% |
-| Long Liquidation | -1.88% | -3.57% |
-| Aggressive Short Buildup | +3.24% | -12.10% |
-| Short Covering Rally | -1.74% | -3.62% |
+| Signal | Observations | Median 7D Return | Median 30D Return |
+|---|---:|---:|---:|
+| Strong ETF Inflows | 22 | +2.00% | -2.35% |
+| Aggressive Long Buildup | 14 | -1.24% | -4.47% |
+| Long Liquidation | 25 | -1.88% | -3.57% |
+| Aggressive Short Buildup | 8 | +3.24% | -12.10% |
+| Short Covering Rally | 14 | -1.74% | -3.62% |
 
 These preliminary results suggest that different institutional flow and leverage regimes exhibit meaningfully different forward-return profiles. Additional data and larger sample sizes are needed to evaluate the robustness of these relationships.
+
+## Sample Findings
+
+[table here]
+
+These preliminary results suggest that different institutional flow and leverage regimes exhibit meaningfully different forward-return profiles. Additional data and larger sample sizes are needed to evaluate the robustness of these relationships.
+
+## Example Visualizations
+
+### BTC Price with Leverage Regime Signals
+
+![Leverage Regimes](outputs/charts/leverage_regime_signals.png)
+
+### BTC ETF Flow Z-Score
+
+![ETF Flow Z-Score](outputs/charts/etf_flow_zscore.png)
+
+### BTC ETF 7-Day Rolling Net Flows
+
+![Rolling ETF Flows](outputs/charts/rolling_etf_flows.png)
+
+### BTC Price with Composite Positioning Signals
+
+![Composite Signals](outputs/charts/composite_positioning_signals.png)
 
 ## Notebook
 
