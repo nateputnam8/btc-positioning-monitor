@@ -4,7 +4,9 @@
 
 The BTC Positioning Monitor is a market-structure framework designed to identify the dominant positioning forces driving Bitcoin.
 
-The project combines spot price action, institutional capital flows, derivatives positioning, and liquidation activity to generate a daily positioning report summarizing the market environment.
+The project combines spot price action, institutional capital flows, derivatives positioning, and liquidation activity to generate a daily positioning report and AI-generated market structure commentary summarizing the market environment.
+
+The objective is not to predict price directly, but to explain whether market moves are being driven by institutional flows, leverage positioning, or liquidation dynamics.
 
 The framework is designed to answer questions such as:
 
@@ -69,6 +71,35 @@ The framework is inspired by institutional positioning analysis commonly used ac
 - Primary Market Driver Identification
 - Daily Positioning Report Generation
 
+## AI Market Commentary
+
+The monitor automatically generates institutional-style market commentary using the OpenAI API.
+
+Commentary is generated from the daily positioning report and incorporates:
+
+- BTC price action
+- ETF flow signals
+- Funding rates
+- Futures open interest
+- Liquidation activity
+- Market regime classification
+
+The commentary is designed to answer:
+
+- What is driving today's move?
+- Is the market institutionally driven or leverage driven?
+- Is positioning improving or deteriorating?
+- Are liquidation dynamics becoming more or less important?
+- What risks should traders monitor next?
+
+Output is structured into:
+
+- Summary
+- Key Takeaways
+- What To Watch
+
+Daily commentary and positioning metrics are archived in JSON format to support historical analysis and future contextual commentary generation.
+
 ---
 
 ## Positioning Regimes
@@ -116,46 +147,55 @@ The framework is inspired by institutional positioning analysis commonly used ac
 
 ## Example Daily Positioning Report
 
-The positioning monitor generates a daily market-structure summary designed to identify the dominant positioning regime driving Bitcoin.
+The monitor generates a daily market structure report and AI commentary summarizing the dominant drivers of BTC price action.
 
-Example output:
+### Report Output
 
 ```text
 BTC DAILY POSITIONING REPORT
 -----------------------------------
-Generated: 2026-06-04
-Market Data Through: 2026-06-03
+Generated: 2026-06-10
+Market Data Through: 2026-06-09
 
 PRICE
-BTC Price: $64,022
-1D Return: -3.9%
-7D Return: -13.9%
-30D Return: -19.8%
-Rolling 7D Volatility: 2.6%
+BTC Price: $61,658
+1D Return: -2.3%
+7D Return: -7.5%
+30D Return: -24.9%
+Rolling 7D Volatility: 2.8%
 
 INSTITUTIONAL DEMAND
-ETF Flow Z-Score: -0.8
+ETF Flow Z-Score: 0.2
 Institutional Signal: Neutral
 
 LEVERAGE POSITIONING
-Funding Z-Score: 0.2
-OI Z-Score: -2.8
-OI 7D Change: -17.3%
+Funding Rate: 0.0%
+Funding Z-Score: -0.3
+OI Z-Score: -1.5
+OI 7D Change: -6.7%
 Leverage Signal: Long Liquidation
 
 LIQUIDATION ACTIVITY
-Long Liquidation Z-Score: 1.1
-Short Liquidation Z-Score: 0.0
-Liquidation Signal: Elevated Long Liquidation
+Long Liquidation Z-Score: -0.1
+Short Liquidation Z-Score: -0.2
+Liquidation Signal: Neutral
 
-PRIMARY MARKET REGIME IDENTIFICATION
+PRIMARY MARKET DRIVER
 Risk-Off / Deleveraging
 
-INTERPRETATION
-- Positioning data indicates a risk-off / deleveraging environment.
-- ETF flows were neutral, suggesting institutional demand was not the primary driver.
-- BTC fell -3.9% while open interest reached a -2.8 Z-score, consistent with long positioning being unwound.
-- Elevated long liquidations indicate forced selling pressure from leveraged longs.
+Summary:
+The broader Risk-Off / Deleveraging regime remains intact, though positioning conditions have become materially less extreme. Open interest continues to contract, but the pace of deleveraging has slowed significantly from recent lows. Funding has normalized from the modest long bias observed earlier in the week, suggesting much of the residual long positioning has been removed from the system.
+
+Key Takeaways:
+- Ongoing deleveraging remains the dominant market theme, though positioning conditions continue to improve.
+- Funding has normalized, indicating long positioning imbalances have largely been flushed out.
+- Liquidation activity remains subdued, suggesting forced-position unwinds are no longer a major driver of price action.
+- Neutral ETF flows imply institutional participation was not a significant contributor to recent market moves.
+
+What To Watch:
+- Whether open interest stabilizes after several sessions of contraction.
+- Whether funding begins rebuilding from neutral levels.
+- Whether BTC can establish a base now that liquidation pressure has largely normalized.
 ```
 
 The report combines spot price action, ETF flows, funding rates, open interest, and liquidation activity into a single positioning framework designed to explain the dominant drivers of market behavior.
@@ -215,7 +255,17 @@ These results are based on approximately one year of historical data and should 
 
 ## Notebook
 
-The primary analysis is contained in:
+## Notebook
+
+The primary notebook performs:
+
+- Data collection and normalization
+- Market structure signal generation
+- Daily positioning report generation
+- OpenAI-powered commentary generation
+- Historical commentary archiving
+
+Primary notebook:
 
 `notebooks/btc_positioning_monitor.ipynb`
 

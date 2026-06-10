@@ -6,3 +6,5 @@ __pycache__/
 *.pyc
 data/raw/
 *.csv
+notebooks/commentary_log.json
+notebooks/openai_api_test.ipynb
